@@ -1,0 +1,391 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, -apple-system, "Helvetica Neue", "Segoe UI", Arial,
+    sans-serif;
+  
+}
+
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  background-attachment: fixed;
+  background-image: url("https://www.tastingtable.com/img/gallery/12-low-carb-fast-food-options-that-wont-ruin-your-diet/intro-1651501665.jpg");
+}
+.navbar {
+  background: linear-gradient(to right, #585858, #1a1a1a);
+  overflow: hidden;
+  justify-content: space-around;
+  list-style: none;
+  display: flex;
+}
+
+.navbar a {
+  float: right;
+  color: white;
+  text-align: center;
+  padding: 16px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+}
+
+.navbar li {
+  flex: 1;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;            
+}
+
+.navbar-title {
+  text-align: center;
+  padding: 20px;
+  background-color: #3333339c;
+  color: white;
+  font-size: 70px;
+  font-family: Argent Cambria, serif;            
+}
+
+.welcome {
+  text-align: center;
+  padding: 10px;
+  background-color: #4646469c;
+  color: white;
+  font-size: 16px;
+}
+
+footer{
+  text-align: center;
+  padding: 4px;
+  background-color: #000000bb;
+  color: #ddd;
+}
+
+
+
+.forms-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: #fff;
+}
+
+.forms {
+  padding-top: 10vh;
+  display: flex;
+  align-items: flex-start;
+  
+
+
+}
+
+.form-wrapper {
+  animation: hideLayer 0.3s ease-out forwards;
+}
+
+.form-wrapper.is-active {
+  animation: showLayer 0.3s ease-in forwards;
+}
+
+@keyframes showLayer {
+  50% {
+    z-index: 1;
+  }
+  100% {
+    z-index: 1;
+  }
+}
+
+@keyframes hideLayer {
+  0% {
+    z-index: 1;
+  }
+  49.999% {
+    z-index: 1;
+  }
+}
+
+.switcher {
+  position: relative;
+  cursor: pointer;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 1rem;
+  letter-spacing: 0.02rem;
+  
+  color: #999;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  transform: translateX(0);
+  transition: all 0.3s ease-out;
+}
+
+.form-wrapper.is-active .switcher-login {
+  
+    color: #fff;
+  transform: translateX(0px);
+}
+
+.form-wrapper.is-active .switcher-signup {
+  color: #fff;
+  transform: translateX(-90px);
+}
+
+.underline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  width: 100%;
+  height: 2px;
+}
+
+.underline::before {
+  content: "";
+ 
+  top: 0;
+  left: inherit;
+  display: block;
+  width: inherit;
+  height: inherit;
+  background-color: currentColor;
+  transition: transform 0.2s ease-out;
+}
+
+.switcher-login .underline::before {
+  transform: translateX(101%);
+}
+
+.switcher-signup .underline::before {
+  transform: translateX(-101%);
+}
+
+.form-wrapper.is-active .underline::before {
+  transform: translateX(0);
+}
+
+.form {
+  overflow: hidden;
+  width:25vw;
+  height:100%;
+  margin-top: 10vh;
+  margin-bottom: 8vh;
+  
+  padding: 3vh 4vw;
+  border-radius: 5px;
+  transform-origin: top;
+  
+}
+
+.form-login {
+  animation: hideLogin 0.3s ease-out forwards;
+}
+
+.form-wrapper.is-active .form-login {
+  animation: showLogin 0.3s ease-in forwards;
+}
+
+@keyframes showLogin {
+  0% {
+    background-color: #333333;
+   
+    transform: translate(40%, 10px);
+  }
+  50% {
+   
+    transform: translate(0, 0);
+  }
+  100% {
+    background-color: #333333;
+    
+    transform: translate(35%, -20px);
+  }
+}
+
+@keyframes hideLogin {
+  0% {
+    background-color: #333333;
+    
+    transform: translate(35%, -20px);
+  }
+  50% {
+    background-color: #333333;
+    transform: translate(0, 0);
+  }
+  100% {
+    opacity: 0.4;
+    background-color: #333333;
+    transform: translate(40%, 10px);
+  }
+}
+
+.form-signup {
+  animation: hideSignup 0.3s ease-out forwards;
+}
+
+.form-wrapper.is-active .form-signup {
+  animation: showSignup 0.3s ease-in forwards;
+}
+
+@keyframes showSignup {
+  0% {
+    background-color: #333333;
+    transform: translate(-40%, 10px) scaleY(0.8);
+    
+  }
+  50% {
+    transform: translate(0, 0) scaleY(0.8);
+  }
+  100% {
+    background-color: #333333;
+    
+    transform: translate(-35%, -20px) scaleY(1);
+  }
+}
+
+@keyframes hideSignup {
+  0% {
+    background-color: #333333;
+    transform: translate(-35%, -20px) scaleY(1);
+  }
+  50% {
+    transform: translate(0, 0) scaleY(0.8);
+  }
+  100% {
+    background-color: #333333;
+    opacity: 0.4;
+    transform: translate(-40%, 10px) scaleY(0.6);
+  }
+}
+
+.form fieldset {
+ 
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  transition: all 0.3s ease-out;
+}
+
+
+.form-wrapper.is-active fieldset {
+  opacity: 1;
+ 
+  
+}
+
+.form legend {
+  position: absolute;
+  overflow: hidden;
+  width: 0.1vw;
+  height: 0.1vh;
+  clip: rect(0 0 0 0);
+}
+
+.input-block {
+
+  margin-bottom: 20px;
+}
+
+.input-block label {
+  font-size: 14px;
+  color: #a1b4b4;
+  
+}
+
+.input-block input {
+    
+  display: block;
+  width: 100%;
+  height: 5vh;
+  margin-top: 8px;
+  padding-right: 15px;
+  padding-left: 15px;
+  font-size: 1rem;
+  line-height: 40px;
+  color: #3b4465;
+  background: #eef9fe;
+  border: 1px solid #cddbef;
+  border-radius: 2px;
+}
+
+.form [type="submit"] {
+  opacity: 0;
+  display: block;
+  width: 6vw;
+  height: 5vh;
+  margin: 2vh auto 1vw;
+  font-size: 18px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ 
+  border-radius: 25px;
+  border: none;
+  transition: all 0.3s ease-out;
+}
+
+.form-wrapper.is-active .form [type="submit"] {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.4s ease-in;
+  
+
+}
+
+.btn-login {
+  width: 7vw;
+  height: 5vh;
+  color: #333333;
+  background: white;
+  margin-bottom: 5vh;
+  font-size: 1rem;
+  
+}
+
+
+.btn-signup {
+    color: #333333;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+ 
+}
+@media screen and (max-width: 880px) {
+    .btn-login span {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        
+        font-size: 0.5rem;
+      
+    }
+    .btn-signup span {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        
+        font-size: 0.5rem;
+      
+    }
+  }
